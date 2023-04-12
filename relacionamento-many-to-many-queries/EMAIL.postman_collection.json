@@ -1,0 +1,135 @@
+{
+	"info": {
+		"_postman_id": "aacb59bf-6d13-422b-94c7-1cf735cfea0c",
+		"name": "EMAIL",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7132654"
+	},
+	"item": [
+		{
+			"name": "EMAIL_GET_ALL",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/email",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"email"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "EMAIL_GET_ONE",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/email/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"email",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "EMAIL_POST",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"from\": \"camilo@gmail.com\",\r\n    \"to\": \"alunos@iftm.edu.br\",\r\n    \"subject\": \"Atividade 02\",\r\n    \"body\": \"Nova atividade...\",\r\n    \"attachment\": \"atividade.zip\",\r\n    \"user\": {\r\n        \"id\": 1\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/email",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"email"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "EMAIL_PUT",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 1,\r\n  \"from\": \"camilo@gmail.com\",\r\n  \"to\": \"alunos@iftm.edu.br\",\r\n  \"subject\": \"Atividade 02\",\r\n  \"body\": \"Nova atividade...\",\r\n  \"attachment\": \"atividade.zip\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/email",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"email"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "EMAIL_DELETE",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/email/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"email",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
