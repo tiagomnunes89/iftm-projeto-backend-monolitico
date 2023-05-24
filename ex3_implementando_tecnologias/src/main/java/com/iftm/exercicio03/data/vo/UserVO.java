@@ -1,13 +1,14 @@
-package com.iftm.exercicio02.data.vo;
+package com.iftm.exercicio03.data.vo;
 
-import com.iftm.exercicio02.models.Email;
+import com.iftm.exercicio03.models.Email;
+import org.springframework.hateoas.RepresentationModel;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class UserVO implements Serializable {
+public class UserVO extends RepresentationModel<UserVO> implements Serializable {
 
     private Long id;
     private String firstName;
@@ -97,8 +98,8 @@ public class UserVO implements Serializable {
 
     @Override
     public boolean equals(Object o) {
-        if(this == o) return true;
-        if(o == null || getClass() != o.getClass()) return false;
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
         UserVO userVO = (UserVO) o;
         return Objects.equals(id, userVO.id) && Objects.equals(firstName, userVO.firstName) && Objects.equals(lastName, userVO.lastName) && Objects.equals(userName, userVO.userName) && Objects.equals(password, userVO.password) && Objects.equals(phone, userVO.phone) && Objects.equals(socialNetwork, userVO.socialNetwork) && Objects.equals(emails, userVO.emails);
     }

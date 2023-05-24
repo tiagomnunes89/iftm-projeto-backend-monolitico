@@ -1,49 +1,31 @@
-package com.iftm.exercicio02.models;
+package com.iftm.exercicio03.data.vo;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import jakarta.persistence.*;
+import com.iftm.exercicio03.models.User;
+import org.springframework.hateoas.RepresentationModel;
 
 import java.io.Serializable;
 import java.util.Objects;
 
-@Entity
-@Table(name = "email_table")
-public class Email implements Serializable {
+public class EmailVO extends RepresentationModel<UserVO> implements Serializable {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name = "from_mail", nullable = false)
     private String from;
-    @Column(name = "to_mail", nullable = false)
     private String to;
-    @Column(name = "subject_mail", nullable = false)
     private String subject;
-    @Column(name = "body_mail", nullable = false)
     private String body;
-    @Column(name = "attachment_mail", nullable = false)
     private String attachment;
-    @ManyToOne
-    @JsonBackReference
+
     private User user;
 
-    public Email() {
+    public EmailVO() {
     }
 
-    public Email(String from, String to, String subject, String body, String attachment) {
+    public EmailVO(String from, String to, String subject, String body, String attachment, User user) {
         this.from = from;
         this.to = to;
         this.subject = subject;
         this.body = body;
         this.attachment = attachment;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
         this.user = user;
     }
 
@@ -95,28 +77,37 @@ public class Email implements Serializable {
         this.attachment = attachment;
     }
 
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
     @Override
     public boolean equals(Object o) {
-        if(this == o) return true;
-        if(o == null || getClass() != o.getClass()) return false;
-        Email email = (Email) o;
-        return Objects.equals(id, email.id) && Objects.equals(from, email.from) && Objects.equals(to, email.to) && Objects.equals(subject, email.subject) && Objects.equals(body, email.body) && Objects.equals(attachment, email.attachment);
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        EmailVO emailVO = (EmailVO) o;
+        return Objects.equals(id, emailVO.id) && Objects.equals(from, emailVO.from) && Objects.equals(to, emailVO.to) && Objects.equals(subject, emailVO.subject) && Objects.equals(body, emailVO.body) && Objects.equals(attachment, emailVO.attachment) && Objects.equals(user, emailVO.user);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, from, to, subject, body, attachment);
+        return Objects.hash(id, from, to, subject, body, attachment, user);
     }
 
     @Override
     public String toString() {
-        return "Email{" +
+        return "EmailVO{" +
                 "id=" + id +
                 ", from='" + from + '\'' +
                 ", to='" + to + '\'' +
                 ", subject='" + subject + '\'' +
                 ", body='" + body + '\'' +
                 ", attachment='" + attachment + '\'' +
+                ", user=" + user +
                 '}';
     }
 }

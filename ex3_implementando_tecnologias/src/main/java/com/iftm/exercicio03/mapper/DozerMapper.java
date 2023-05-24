@@ -1,6 +1,5 @@
-package com.iftm.exercicio02.mapper;
+package com.iftm.exercicio03.mapper;
 
-import com.github.dozermapper.core.DozerBeanMapper;
 import com.github.dozermapper.core.DozerBeanMapperBuilder;
 import com.github.dozermapper.core.Mapper;
 
@@ -17,7 +16,7 @@ public class DozerMapper {
 
     public static <O, D> List<D> parseListObject(List<O> origin, Class<D> destination) {
         List<D> destinationObjects = new ArrayList<D>();
-        for(O o : origin) {
+        for (O o : origin) {
             destinationObjects.add(mapper.map(o, destination));
         }
         return destinationObjects;

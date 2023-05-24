@@ -1,13 +1,13 @@
-package com.iftm.exercicio02;
+package com.iftm.exercicio03;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class Exercicio02ApplicationTests {
+class Exercicio03ApplicationTests {
 
-	@Test
-	void contextLoads() {
-	}
+    @Test
+    void contextLoads() {
+    }
 
 }

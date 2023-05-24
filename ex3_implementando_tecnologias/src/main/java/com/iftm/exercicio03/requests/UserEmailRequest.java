@@ -1,7 +1,8 @@
-package com.iftm.exercicio02.requests;
+package com.iftm.exercicio03.requests;
 
-import com.iftm.exercicio02.models.Email;
-import com.iftm.exercicio02.models.User;
+
+import com.iftm.exercicio03.models.Email;
+import com.iftm.exercicio03.models.User;
 
 import java.io.Serializable;
 import java.util.Objects;
@@ -36,8 +37,8 @@ public class UserEmailRequest implements Serializable {
 
     @Override
     public boolean equals(Object o) {
-        if(this == o) return true;
-        if(o == null || getClass() != o.getClass()) return false;
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
         UserEmailRequest that = (UserEmailRequest) o;
         return Objects.equals(user, that.user) && Objects.equals(email, that.email);
     }
